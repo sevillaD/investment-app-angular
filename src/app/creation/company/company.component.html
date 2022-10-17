@@ -1,0 +1,60 @@
+
+<h2 mat-dialog-title>Add Company</h2>
+
+<mat-divider></mat-divider>
+
+<form [formGroup]="createForm">
+<mat-dialog-content class="mat-typography">
+
+        <div class="form-container">
+            <mat-form-field hintLabel="Max 50 characters" appearance="fill">
+              <mat-label>Company Name</mat-label>
+              <input matInput #companyName maxlength="50" placeholder="Ex. Microsoft" formControlName="companyName">
+             <!--  <mat-hint align="end">{{companyName.value?.length || 0}}/20</mat-hint> -->
+            </mat-form-field>
+
+            <mat-form-field hintLabel="Max 50 characters" appearance="fill">
+                <mat-label>Stock Symbol</mat-label>
+                <input matInput #stockSymbol maxlength="50" placeholder="Ex. MSFT" formControlName="stockSymbol">
+               <!--  <mat-hint align="end">{{stockSymbol.value?.length || 0}}/20</mat-hint> -->
+            </mat-form-field>
+
+            <br>
+          
+            <mat-form-field appearance="fill">
+              <mat-label>Sector</mat-label>
+              <mat-select formControlName="sector">
+                <mat-option *ngFor="let value of industry" [value]="value">{{value}}</mat-option>
+              </mat-select>
+              <mat-hint align="end">Select Sector</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Pays Dividend?</mat-label>
+                <mat-select formControlName="dividend">
+                  <mat-option matInput #dividend *ngFor="let dividend of dividendCompany" [value]="dividend">{{updateValue(dividend)}}</mat-option>
+                </mat-select>
+                <mat-hint align="end">Select Sector</mat-hint>
+            </mat-form-field>
+            
+            <br>
+
+            <mat-form-field hintLabel="Max 10 characters" appearance="fill">
+                <mat-label>Dividend Amount</mat-label>
+                <input matInput #dividendAmount maxlength="10" placeholder="Ex. $0.25" formControlName="dividendAmount">
+              <!--   <mat-hint align="end">{{dividendAmount.value?.length || 0}}/10</mat-hint> -->
+            </mat-form-field>
+
+
+        </div>
+
+
+  
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button mat-dialog-close>Cancel</button>
+  <button mat-raised-button color="primary" class="btn_submit" type="submit" [disabled]="!createForm.valid" (click)="onSubmit()" mat-button [mat-dialog-close]="true" cdkFocusInitial>Submit</button>
+</mat-dialog-actions>
+
+</form>

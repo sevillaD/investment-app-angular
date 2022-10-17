@@ -1,0 +1,75 @@
+
+<mat-toolbar>
+
+        <div fxHide.gt-xs>
+            <button mat-icon-button (click)="onToggleSidenav()">
+                <mat-icon>menu</mat-icon>
+            </button>
+        </div>
+
+
+        <div>
+            <a routerLink="/">
+               <fa-icon [icon]="globalIcon" size="2x"></fa-icon>
+            </a> 
+        </div>
+
+        <div class="logo">
+            Investments Management
+        </div>
+    
+
+        <!-- 
+            <div fxFlex fxLayoutAlign="flex-end" fxHide.xs>
+
+                <ul fxLayout fxLayoutGap="20px"  class="navigationItems">
+
+                    <li class="items"> <a routerLink="/">Home</a> </li>
+                    <li class="items"> <a routerLink="">Reporting</a> </li>
+                    <li class="items" id="create_btn"> <a routerLink="">Create</a> </li>
+                </ul>
+
+            </div>
+        -->
+    
+        <div fxFlex fxLayoutAlign="flex-end" fxHide.xs>
+    
+            <ul fxLayout fxLayoutGap="10px"  class="navigationItems">
+
+                
+                    <button routerLink="/" mat-button style="font-size: 1rem; background-color: transparent; ">Home</button>
+               
+
+               
+                    <button mat-button [matMenuTriggerFor]="reporting" style="font-size: 1rem;">
+                    Reporting
+                    <mat-icon>expand_more</mat-icon>
+                    </button> 
+                    
+                    <mat-menu #reporting="matMenu" yPosition="above">
+                        <button mat-menu-item routerLink="/companies"> Companies </button>
+                        <button mat-menu-item routerLink="/historical-transactions">Transactions</button>
+                    </mat-menu>
+                
+
+                    <button mat-button [matMenuTriggerFor]="create" style="font-size: 1rem;">
+                    Create
+                    <mat-icon>expand_more</mat-icon>
+                    </button>
+                
+                    <mat-menu #create="matMenu" yPosition="above">
+                        <button mat-menu-item (click)="openDialog()">Company Record</button>
+                        <button mat-menu-item >Transaction</button>
+                        <button mat-menu-item >Risk Analysis</button>
+                    </mat-menu>
+
+                    <!-- <button mat-button style="font-size: 1rem; background-color: #000046;color:white; ">Sign up</button> -->
+                    <button mat-button style="font-size: 1rem; background-color: #383434; color:white; ">Sign in</button>
+                    <button mat-button style="font-size: 1rem;  ">Logout</button>
+
+            </ul>
+    
+        </div>
+
+    
+</mat-toolbar>

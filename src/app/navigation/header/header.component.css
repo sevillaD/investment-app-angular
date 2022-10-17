@@ -1,0 +1,88 @@
+
+
+mat-toolbar{
+    background-color: #ffffff;
+    border-bottom: 1px solid lightgrey;
+    height: 90px;
+
+}
+
+.toolbar_wrapper{
+    width: 1500px; 
+    margin:auto; 
+    padding:10px;
+}
+
+a fa-icon{
+    color: #000046;
+    margin-left: 5px;
+}
+
+.logo{
+    color: #706E6E;
+    margin-left: 5px;
+    font-size: 1.5rem;
+}
+
+
+#sign_up a{
+    background-color: #000046;
+    border-radius: 40px;
+    padding: 4px 23px;
+    color:#fff1f1;
+}
+
+#sign_in a{
+    background-color: #383434;
+    border-radius: 40px;
+    padding: 4px 23px;
+    color:#fff1f1;
+
+}
+
+#create_btn a{
+    background-color: #15317e;
+    border-radius: 40px;
+    padding: 4px 23px;
+    color:#fff1f1;
+}
+
+#sign_up a:hover, #sign_in a:hover{
+    opacity: 0.8;
+    transition: ease-in-out 0.4s;
+}
+
+#create_btn a:hover{
+    opacity: 0.8;
+    transition: ease-in-out 0.4s;
+}
+
+
+
+a{
+    text-decoration: none;
+    color: #706E6E;
+    font-weight: 400 !important;
+    line-height: 24px;
+}
+
+a:hover,
+a:active{
+    /**color:lightgray;**/
+    color: #000046;
+    font-weight: bold;
+}
+
+.navigationItems{
+    list-style-type: none;
+    padding: 0;
+    margin-right: 10px;
+}
+
+
+
+.nav-caption{
+    display: inline-block;
+    padding-left: 6px;
+}
+

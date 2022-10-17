@@ -1,0 +1,31 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Company } from '../model/Company';
+import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
+
+const COMPANIES_URL = `${environment.BASE_URL}`;
+
+@Injectable({
+  providedIn: 'root'
+})
+export class CompaniesService {
+
+
+  constructor(private http: HttpClient) { }
+
+  getCompanies(){
+    return this.http.get<Company[]>(`${COMPANIES_URL}/all-companies`);
+  }
+
+ /**  addCompany(company:Company){
+    return this.http.post(`${COMPANIES_URL}/add-company`, company);
+  }**/
+
+  addCompany(company:Company):Observable<any>{
+    return this.http.post(`${COMPANIES_URL}/add-company`, company)
+  }
+
+
+
+}
