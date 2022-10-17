@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Company } from 'src/app/model/Company';
+import { CompaniesService } from 'src/app/services/companies.service';
 
 @Component({
   selector: 'app-update-company',
@@ -21,11 +22,11 @@ export class UpdateCompanyComponent implements OnInit {
 
   constructor(private route:ActivatedRoute,
               private router:Router,
-              public dialogRef: MatDialogRef<UpdateCompanyComponent>, @Inject(MAT_DIALOG_DATA) public data:any) { }
+              public dialogRef: MatDialogRef<UpdateCompanyComponent>, @Inject(MAT_DIALOG_DATA) public data:any,
+              private companyService: CompaniesService) { }
 
   ngOnInit(): void {
 
-    console.log("Id:" + this.data.id);
 
     this.updateForm = new FormGroup({
       'companyId': new FormControl(),
@@ -39,6 +40,32 @@ export class UpdateCompanyComponent implements OnInit {
       'lastUpdatedBy': new FormControl(),
       'lastUpdatedDate': new FormControl()
     });
+
+
+    this.companyService.getCompanyById(this.data.id).subscribe(
+
+      data=>{
+        console.log("Data" + this.data);
+        
+        this.updateForm = new FormGroup({
+          'companyId': new FormControl(data['companyId']),
+          'companyName': new FormControl(data['companyName']),
+          'stockSymbol':new FormControl(data['stockSymbol']),
+          'sector': new FormControl(data['sector']),
+          'dividend': new FormControl(data['dividend']),
+          'dividendAmount': new FormControl(data['dividendAmount']),
+          'createdBy': new FormControl(data['createdBy']),
+          'createdDate': new FormControl(data['createdDate']),
+          'lastUpdatedBy': new FormControl(data['lastUpdatedBy']),
+          'lastUpdatedDate': new FormControl(data['lastUpdatedDate'])
+        });
+
+
+
+      }
+
+
+    )
   }
 
 

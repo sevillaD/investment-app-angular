@@ -14,18 +14,16 @@ export class CompaniesService {
 
   constructor(private http: HttpClient) { }
 
-  getCompanies(){
+  getCompanies():Observable<any>{
     return this.http.get<Company[]>(`${COMPANIES_URL}/all-companies`);
   }
-
- /**  addCompany(company:Company){
-    return this.http.post(`${COMPANIES_URL}/add-company`, company);
-  }**/
 
   addCompany(company:Company):Observable<any>{
     return this.http.post(`${COMPANIES_URL}/add-company`, company)
   }
 
-
+  getCompanyById(id: number):Observable<any>{
+    return this.http.get(`${COMPANIES_URL}/company/${id}`);
+  }
 
 }
