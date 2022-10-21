@@ -15,7 +15,8 @@ const routes: Routes = [
   {path:'add-transaction', component:TransactionComponent},
   {path: 'add-company', component:CompanyComponent},
   {path:'add-risk-analysis', component: AddRiskAnalysisComponent},
-  {path: 'update-company/:companyId', component:UpdateCompanyComponent}
+  {path: 'update-company/:companyId', component:UpdateCompanyComponent},
+  {path:'add-transaction', component:TransactionComponent}
 ];
 
 @NgModule({

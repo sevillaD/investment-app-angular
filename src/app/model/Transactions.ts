@@ -11,7 +11,11 @@ export class Transactions{
                 public sellingPrice:number,
                 public realizedGain: number,
                 public status:string,
-                public stockSymbol:string
+                public createdBy:string,
+                public createdDate: Date,
+                public lastUpdatedBy:string,
+                public lastUpdatedDate:Date,
+                public companyId:number
                 ){}
 
 }

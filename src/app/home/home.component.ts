@@ -1,6 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { Company } from '../model/Company';
-import { CompaniesService } from '../services/companies.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
+
+
+
+export class Testing{
+
+  constructor(public companyId:number, public stockSymbol:string){
+
+  }
+
+}
 
 @Component({
   selector: 'app-home',
@@ -10,12 +18,13 @@ import { CompaniesService } from '../services/companies.service';
 export class HomeComponent implements OnInit {
 
  
+ 
 
   constructor() { }
 
   ngOnInit(): void {
 
-
   }
 
+ 
 }

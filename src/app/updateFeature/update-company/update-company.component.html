@@ -3,7 +3,7 @@
 
 <mat-divider></mat-divider>
 
-<form [formGroup]="updateForm">
+<form [formGroup]="updateForm" (ngSubmit)="updateCompany()">
 <mat-dialog-content class="mat-typography">
 
         <div class="form-container">
@@ -49,12 +49,18 @@
         </div>
 
 
-  
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">
   <button mat-raised-button mat-dialog-close>Cancel</button>
-  <button mat-raised-button color="primary" class="btn_submit" type="submit" [disabled]="!updateForm.valid"  mat-button [mat-dialog-close]="true" cdkFocusInitial>Submit</button>
+  <button mat-raised-button 
+          color="primary" 
+          class="btn_submit" 
+          type="submit" 
+          [disabled]="!updateForm.valid"  
+          mat-button [mat-dialog-close]="true" 
+          cdkFocusInitial
+          >Submit</button>
 </mat-dialog-actions>
 
 </form>

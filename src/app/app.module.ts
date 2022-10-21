@@ -38,6 +38,7 @@ import { CompanyComponent } from './creation/company/company.component';
 import { AddRiskAnalysisComponent } from './creation/add-risk-analysis/add-risk-analysis.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UpdateCompanyComponent } from './updateFeature/update-company/update-company.component';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -81,7 +82,8 @@ import { UpdateCompanyComponent } from './updateFeature/update-company/update-co
     FontAwesomeModule,
     MatMenuModule,
     HttpClientModule,
-    MatDividerModule
+    MatDividerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

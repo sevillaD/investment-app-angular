@@ -1,1 +1,75 @@
-<p>transaction works!</p>
+
+<h2 mat-dialog-title>Add Transaction</h2>
+
+<mat-divider></mat-divider>
+
+<form [formGroup]="createForm">
+    <mat-dialog-content class="mat-typography">
+    
+            
+      <div class="form-container">
+
+
+        <mat-form-field appearance="fill">
+          <mat-label>Stock Symbol</mat-label>
+          <mat-select formControlName="companyId">
+            <mat-option *ngFor="let value of companies" [value]="value.companyId">{{value.stockSymbol}}</mat-option>
+          </mat-select>
+          <mat-hint align="end">Select Transaction Type</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Transaction Type</mat-label>
+          <mat-select formControlName="transactionType">
+            <mat-option *ngFor="let value of transactionType" [value]="value">{{value}}</mat-option>
+          </mat-select>
+          <mat-hint align="end">Select Transaction Type</mat-hint>
+        </mat-form-field>
+        
+        <br>
+
+        <mat-form-field hintLabel="Max 10 characters" appearance="fill">
+          <mat-label>Quantity</mat-label>
+          <input matInput #quantity maxlength="50" placeholder="Ex. 100" formControlName="quantity">
+        </mat-form-field>
+
+        <mat-form-field hintLabel="Max 10 characters" appearance="fill">
+          <mat-label>Price</mat-label>
+          <input matInput #price maxlength="50" placeholder="Ex. 100" formControlName="price">
+          <span matPrefix>$&nbsp;</span>
+        </mat-form-field>
+
+        <br>
+
+        <mat-form-field  appearance="fill" class="datePicker">
+          <mat-label>Select Buying Date</mat-label>
+          <input matInput [matDatepicker]="buyingDate" formControlName="buyingDate" >
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="buyingDate">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #buyingDate></mat-datepicker>
+        </mat-form-field>
+        
+      </div>
+               
+    
+    
+      
+    </mat-dialog-content>
+    
+    <mat-dialog-actions align="end">
+      <button mat-raised-button mat-dialog-close>Cancel</button>
+      <button 
+        mat-raised-button 
+        color="primary" 
+        class="btn_submit"
+        type="submit" 
+        [disabled]="!createForm.valid" 
+        (click)="onSubmit()"
+        mat-button [mat-dialog-close]="true" 
+        cdkFocusInitial
+        >Submit</button>
+    </mat-dialog-actions>
+    
+    </form>

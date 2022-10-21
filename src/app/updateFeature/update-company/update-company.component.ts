@@ -27,7 +27,7 @@ export class UpdateCompanyComponent implements OnInit {
 
   ngOnInit(): void {
 
-
+    /**Create updateForm programatically, here we define the fields of the form */
     this.updateForm = new FormGroup({
       'companyId': new FormControl(),
       'companyName': new FormControl(null, Validators.required),
@@ -42,6 +42,7 @@ export class UpdateCompanyComponent implements OnInit {
     });
 
 
+    /**This is what makes it possible to populate the form with the required information based on the company ID */
     this.companyService.getCompanyById(this.data.id).subscribe(
 
       data=>{
@@ -60,15 +61,30 @@ export class UpdateCompanyComponent implements OnInit {
           'lastUpdatedDate': new FormControl(data['lastUpdatedDate'])
         });
 
-
-
       }
-
 
     )
   }
 
 
+  updateCompany(){
+
+    this.companyService.updateCompany(this.updateForm.value).subscribe(
+
+      data=>{
+        console.log(data, "Data updated successfully!");
+        this.router.navigate(['/companies']);
+      }, err=>{
+        this.errorMessage = "Unable to update company!"
+        console.log(this.errorMessage)
+      }
+
+    )
+  }
+
+
+
+  /**This helps to change a value of true or false to Y and N */
   updateValue(value: boolean){
 
     if(value == true){
@@ -76,6 +92,17 @@ export class UpdateCompanyComponent implements OnInit {
     } else{
       return 'No'
     }
+  }
+
+
+  getCompanies(){
+    this.companyService.getCompanies().subscribe(
+      data=>{
+        this.company = data;
+      }, err=>{
+        this.errorMessage = "Unable to get companies data!"
+      }
+    )
   }
 
 

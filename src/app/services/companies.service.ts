@@ -11,7 +11,6 @@ const COMPANIES_URL = `${environment.BASE_URL}`;
 })
 export class CompaniesService {
 
-
   constructor(private http: HttpClient) { }
 
   getCompanies():Observable<any>{
@@ -24,6 +23,10 @@ export class CompaniesService {
 
   getCompanyById(id: number):Observable<any>{
     return this.http.get(`${COMPANIES_URL}/company/${id}`);
+  }
+
+  updateCompany(company:Company):Observable<any>{
+    return this.http.put(`${COMPANIES_URL}/update-company`, company);
   }
 
 }

@@ -24,7 +24,7 @@
         
         <ng-container matColumnDef="quantity">
             <mat-header-cell *matHeaderCellDef>Quantity</mat-header-cell>
-            <mat-cell *matCellDef="let element ">{{element.quantity}}</mat-cell>
+            <mat-cell *matCellDef="let element ">{{element.quantity | number:'1.0':'en-US'}}</mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="price">
@@ -39,12 +39,12 @@
 
         <ng-container matColumnDef="buyingDate">
             <mat-header-cell *matHeaderCellDef>Buying Date</mat-header-cell>
-            <mat-cell *matCellDef="let element ">{{element.buyingDate}}</mat-cell>
+            <mat-cell *matCellDef="let element ">{{element.buyingDate | date}}</mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="sellingDate">
             <mat-header-cell *matHeaderCellDef>Selling Date</mat-header-cell>
-            <mat-cell *matCellDef="let element ">{{element.sellingDate}}</mat-cell>
+            <mat-cell *matCellDef="let element ">{{element.sellingDate | date}}</mat-cell>
         </ng-container>
 
 

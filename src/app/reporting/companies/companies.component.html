@@ -1,4 +1,4 @@
-<section>
+<section fxFlex.gt-sm="70%" fxFlex="100%;">
 
     <div class="companies_header">
         <div class="text_header">Companies Report</div>
@@ -7,9 +7,9 @@
     <mat-table [dataSource]="dataSource">
     
         <ng-container matColumnDef="companyId">
-            <mat-header-cell *matHeaderCellDef>Company ID</mat-header-cell>
-            <mat-cell *matCellDef="let element "> 
-                <button mat-raised-button color="primary" (click)="openDialog(element.companyId)">{{element.companyId}}</button>
+            <mat-header-cell *matHeaderCellDef fxFlex="20%" fxFlex.gt-sm="12%">Company ID</mat-header-cell>
+            <mat-cell *matCellDef="let element " fxFlex="20%" fxFlex.gt-sm="12%"> 
+                <button  fxFlex="40px;" fxLayoutAlign="center" mat-raised-button class="btn"  (click)="openDialog(element.companyId)">   <mat-icon>edit</mat-icon> </button>
             </mat-cell>
         </ng-container>
     

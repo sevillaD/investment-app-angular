@@ -20,7 +20,6 @@ export class HistoricalTransactionsComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   
-
   constructor(private transactionService:TransactionsService) { }
 
   ngOnInit(): void {
