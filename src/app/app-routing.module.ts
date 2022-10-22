@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { CompaniesComponent } from './reporting/companies/companies.component';
 import { HistoricalTransactionsComponent } from './reporting/historical-transactions/historical-transactions.component';
 import { UpdateCompanyComponent } from './updateFeature/update-company/update-company.component';
+import { UpdateTransactionComponent } from './updateFeature/update-transaction/update-transaction.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path: 'add-company', component:CompanyComponent},
   {path:'add-risk-analysis', component: AddRiskAnalysisComponent},
   {path: 'update-company/:companyId', component:UpdateCompanyComponent},
-  {path:'add-transaction', component:TransactionComponent}
+  {path:'add-transaction', component:TransactionComponent},
+  {path:'update-transaction', component:UpdateTransactionComponent}
 ];
 
 @NgModule({

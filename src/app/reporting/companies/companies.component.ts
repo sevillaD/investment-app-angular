@@ -96,9 +96,6 @@ openDialog(companyId:number):void{
     }
 
   })
-
-
-
 }
 
 

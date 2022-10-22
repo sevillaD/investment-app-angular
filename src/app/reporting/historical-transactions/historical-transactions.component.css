@@ -1,7 +1,6 @@
 
 section{
     margin: auto;
-    width: 90%;
     padding-top: 50px;
 }
 
@@ -46,3 +45,33 @@ section{
     transition: ease-in-out 0.4s;
   }
   
+
+  .btn{
+    color:#004e92;
+  }
+
+
+  @media screen and (max-width: 375px) {
+
+    .mat-header-cell{
+      font-size: 0.62rem;
+    }
+  
+    .mat-cell{
+      font-size: 0.6rem;;
+    }
+  
+  }
+  
+  
+  @media screen and (max-width: 540px) {
+  
+    .mat-header-cell{
+      font-size: 0.8rem;
+    }
+  
+    .mat-cell{
+      font-size: 0.7rem;;
+    }
+  
+  }

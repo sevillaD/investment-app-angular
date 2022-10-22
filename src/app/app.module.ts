@@ -39,6 +39,7 @@ import { AddRiskAnalysisComponent } from './creation/add-risk-analysis/add-risk-
 import { HttpClientModule } from '@angular/common/http';
 import { UpdateCompanyComponent } from './updateFeature/update-company/update-company.component';
 import { MatNativeDateModule } from '@angular/material/core';
+import { UpdateTransactionComponent } from './updateFeature/update-transaction/update-transaction.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     CompaniesComponent,
     CompanyComponent,
     AddRiskAnalysisComponent,
-    UpdateCompanyComponent
+    UpdateCompanyComponent,
+    UpdateTransactionComponent
   ],
   imports: [
     BrowserModule,

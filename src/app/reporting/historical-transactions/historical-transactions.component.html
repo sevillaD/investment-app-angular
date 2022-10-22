@@ -1,4 +1,4 @@
-<section>
+<section fxFlex.gt-sm="80%" fxFlex="70rem">
 
     <div class="transactions_header">
         <div class="text_header">Transactions Report</div>
@@ -6,15 +6,20 @@
 
     <mat-table [dataSource]="dataSource">
 
-
-        <ng-container matColumnDef="stockSymbol">
-            <mat-header-cell *matHeaderCellDef>Stock Symbol</mat-header-cell>
-            <mat-cell *matCellDef="let element ">{{element.stockSymbol}}</mat-cell>
-        </ng-container>
     
         <ng-container matColumnDef="transactionId">
             <mat-header-cell *matHeaderCellDef>Transaction ID</mat-header-cell>
-            <mat-cell *matCellDef="let element ">{{element.transactionId}}</mat-cell>
+            <mat-cell *matCellDef="let element ">
+                <button fxFlex="40px" fxLayoutAlign="center" mat-raised-button class="btn" (click)="openDialog(element.transactionId)" > <mat-icon>edit</mat-icon> </button>
+                <!--{{element.transactionId}}-->
+            </mat-cell> 
+        </ng-container>
+
+        <ng-container matColumnDef="stockSymbol">
+            <mat-header-cell *matHeaderCellDef>Stock Symbol</mat-header-cell>
+            <mat-cell *matCellDef="let element ">
+                {{element.stockSymbol}}
+            </mat-cell>
         </ng-container>
     
         <ng-container matColumnDef="transactionType">
@@ -70,7 +75,7 @@
     </mat-table>
 
     
-    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+    <mat-paginator [pageSizeOptions]="[10, 30, 50]"
     showFirstLastButtons 
     aria-label="Select page of periodic elements">
     </mat-paginator>
