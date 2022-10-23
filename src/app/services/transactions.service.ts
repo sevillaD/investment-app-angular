@@ -22,9 +22,14 @@ export class TransactionsService {
   }
 
   getTransaction(transactionId:number):Observable<any>{
-    return this.http.get(`${TRANSACTIONS_URL}/transaction-id/${transactionId}`)
+    return this.http.get(`${TRANSACTIONS_URL}/transaction/${transactionId}`)
+  }
+
+  updateTransaction(transaction:Transactions):Observable<any>{
+    return this.http.put(`${TRANSACTIONS_URL}/update-transaction`, transaction);
   }
 
 
+  
   
 }
