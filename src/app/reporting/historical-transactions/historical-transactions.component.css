@@ -15,7 +15,7 @@ section{
 
 .text_header{
   padding-left: 5px;
-  font-size: 1.1rem;;
+  font-size: 0.96rem;
   color:#ffffff;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   font-weight: 500;;
@@ -31,7 +31,7 @@ section{
   
   .mat-header-cell{
     /**color:#ffffff;**/
-    font-size: 0.95rem;;
+    font-size:0.875rem;
   }
 
 .mat-row .mat-cell {

@@ -62,7 +62,7 @@ export class CompanyComponent implements OnInit {
  
       this.companyService.addCompany(this.company).subscribe(
         data=>{
-          this.router.navigate(["/companies"]);
+          this.router.navigate([""]);
         }, err =>{
           this.errorMessage = "Unable to add company record!";
           console.log(err);

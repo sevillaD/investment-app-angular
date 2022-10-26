@@ -1,8 +1,12 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { CompanyComponent } from 'src/app/creation/company/company.component';
 import { TransactionComponent } from 'src/app/creation/transaction/transaction.component';
+import { Transactions } from 'src/app/model/Transactions';
+import { TransactionsService } from 'src/app/services/transactions.service';
 
 @Component({
   selector: 'app-header',
@@ -17,7 +21,8 @@ export class HeaderComponent implements OnInit {
 
   globalIcon = faGlobe;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, 
+              private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -31,6 +36,7 @@ export class HeaderComponent implements OnInit {
 
       dialogRef.afterClosed().subscribe(result=>{
         console.log('Dialog result: ${result}');
+        this.router.navigate(['/']);
       })
   }
 
@@ -39,7 +45,10 @@ export class HeaderComponent implements OnInit {
     const dialogRef = this.dialog.open(TransactionComponent);
 
     dialogRef.afterClosed().subscribe(result=>{
+      
       console.log('Dialog result: ${result}');
+      this.router.navigate(['/']);
+    
     })
 }
 

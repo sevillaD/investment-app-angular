@@ -17,6 +17,10 @@ export class TransactionsService {
     return this.http.get<any>(`${TRANSACTIONS_URL}/allTransactions`);
   }
 
+  getAllOpenTransactions():Observable<any>{
+    return this.http.get<any>(`${TRANSACTIONS_URL}/allOpenTransactions`);
+  }
+
   addTransaction(transaction: Transactions):Observable<any>{
     return this.http.post(`${TRANSACTIONS_URL}/add-transaction`, transaction);
   }

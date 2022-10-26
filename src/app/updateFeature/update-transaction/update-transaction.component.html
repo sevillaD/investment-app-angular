@@ -53,6 +53,25 @@
       <mat-datepicker #buyingDate></mat-datepicker>
     </mat-form-field>
 
+    <br>
+
+
+    <mat-form-field  appearance="fill" class="datePicker">
+      <mat-label>Select Selling Date</mat-label>
+      <input matInput [matDatepicker]="sellingDate" formControlName="sellingDate" >
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="sellingDate">
+        <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+      </mat-datepicker-toggle>
+      <mat-datepicker #sellingDate></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field hintLabel="Max 20 characters" appearance="fill">
+      <mat-label>Selling Price</mat-label>
+      <input matInput #sellingPrice maxlength="20" placeholder="Ex. 1,000" formControlName="sellingPrice">
+    </mat-form-field>
+
+
 
 
 

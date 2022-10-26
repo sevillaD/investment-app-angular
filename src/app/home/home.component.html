@@ -1,1 +1,84 @@
-<p>Home works</p>
+
+<section fxFlex.gt-sm="54%" fxFlex="70rem" fxFlexAlign="left">
+
+    <div class="transactions_header">
+        <div class="text_header">Open Transactions</div>
+    </div>
+
+    <mat-table [dataSource]="dataSource">
+
+    
+        <ng-container matColumnDef="transactionId">
+            <mat-header-cell *matHeaderCellDef>Transaction ID</mat-header-cell>
+            <mat-cell *matCellDef="let element ">
+                <button fxFlex="40px" fxLayoutAlign="center" mat-raised-button class="btn"  > <mat-icon>edit</mat-icon> </button>
+                <!--{{element.transactionId}}-->
+            </mat-cell> 
+        </ng-container>
+
+        <ng-container matColumnDef="stockSymbol">
+            <mat-header-cell *matHeaderCellDef>Stock Symbol</mat-header-cell>
+            <mat-cell *matCellDef="let element ">
+                {{element.stockSymbol}}
+            </mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="transactionType">
+            <mat-header-cell *matHeaderCellDef>Transaction Type</mat-header-cell>
+            <mat-cell *matCellDef="let element ">{{element.transactionType}}</mat-cell>
+        </ng-container>
+        
+        <ng-container matColumnDef="quantity">
+            <mat-header-cell *matHeaderCellDef>Quantity</mat-header-cell>
+            <mat-cell *matCellDef="let element ">{{element.quantity | number:'1.0':'en-US'}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="price">
+            <mat-header-cell *matHeaderCellDef>Price</mat-header-cell>
+            <mat-cell *matCellDef="let element ">{{element.price | currency}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="transactionAmount">
+            <mat-header-cell *matHeaderCellDef>Transaction Amount</mat-header-cell>
+            <mat-cell *matCellDef="let element ">{{element.transactionAmount | currency}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="buyingDate">
+            <mat-header-cell *matHeaderCellDef>Buying Date</mat-header-cell>
+            <mat-cell *matCellDef="let element ">{{element.buyingDate | date}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="sellingDate">
+            <mat-header-cell *matHeaderCellDef>Selling Date</mat-header-cell>
+            <mat-cell *matCellDef="let element ">{{element.sellingDate | date}}</mat-cell>
+        </ng-container>
+
+
+        <ng-container matColumnDef="sellingPrice">
+            <mat-header-cell *matHeaderCellDef>Selling Price</mat-header-cell>
+            <mat-cell *matCellDef="let element ">{{element.sellingPrice | currency}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="realizedGain">
+            <mat-header-cell *matHeaderCellDef>Realized Gain</mat-header-cell>
+            <mat-cell *matCellDef="let element ">{{element.realizedGain | currency}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+            <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
+            <mat-cell *matCellDef="let element ">{{element.status}}</mat-cell>
+        </ng-container>
+
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    
+    </mat-table>
+
+    
+    <mat-paginator [pageSizeOptions]="[10, 30, 50]"
+    showFirstLastButtons 
+    aria-label="Select page of periodic elements">
+    </mat-paginator>
+    
+    </section>
