@@ -40,6 +40,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { UpdateCompanyComponent } from './updateFeature/update-company/update-company.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { UpdateTransactionComponent } from './updateFeature/update-transaction/update-transaction.component';
+import { RolesComponent } from './reporting/roles/roles.component';
+import { UsersComponent } from './reporting/users/users.component';
+import { RoleComponent } from './creation/role/role.component';
+import { UserComponent } from './creation/user/user.component';
+import { UpdateRoleComponent } from './updateFeature/update-role/update-role.component';
+import { UpdateUserComponent } from './updateFeature/update-user/update-user.component';
 
 
 @NgModule({
@@ -54,7 +60,13 @@ import { UpdateTransactionComponent } from './updateFeature/update-transaction/u
     CompanyComponent,
     AddRiskAnalysisComponent,
     UpdateCompanyComponent,
-    UpdateTransactionComponent
+    UpdateTransactionComponent,
+    RolesComponent,
+    UsersComponent,
+    RoleComponent,
+    UserComponent,
+    UpdateRoleComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,

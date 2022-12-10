@@ -4,7 +4,7 @@ import { Company } from '../model/Company';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 
-const COMPANIES_URL = `${environment.BASE_URL}`;
+const COMPANIES_URL = `${environment.BASE_URL}/investment`;
 
 @Injectable({
   providedIn: 'root'

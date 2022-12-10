@@ -49,9 +49,10 @@
                     <mat-menu #reporting="matMenu" yPosition="above">
                         <button mat-menu-item routerLink="/companies"> Companies </button>
                         <button mat-menu-item routerLink="/historical-transactions">Transactions</button>
+                        <button mat-menu-item routerLink="/roles">Roles</button>
+                        <button mat-menu-item routerLink="/users">Users</button>
                     </mat-menu>
                     
-
                     <button mat-button [matMenuTriggerFor]="create" style="font-size: 1rem;">
                     Create
                     <mat-icon>expand_more</mat-icon>
@@ -61,7 +62,10 @@
                         <button mat-menu-item (click)="openDialog()">Company Record</button>
                         <button mat-menu-item (click)="openTransactionsDialog()">Transaction</button>
                         <button mat-menu-item >Risk Analysis</button>
+                        <button mat-menu-item (click)="openRolesDialog()">Role</button>
+                        <button mat-menu-item (click)="openUsersDialog()">User</button>
                     </mat-menu>
+                    
 
                     <!-- <button mat-button style="font-size: 1rem; background-color: #000046;color:white; ">Sign up</button> -->
                     <button mat-button style="font-size: 1rem; background-color: #383434; color:white; ">Sign in</button>

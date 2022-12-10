@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Transactions } from '../model/Transactions';
 
-const TRANSACTIONS_URL = `${environment.BASE_URL}`
+const TRANSACTIONS_URL = `${environment.BASE_URL}/investment`
 
 @Injectable({
   providedIn: 'root'
