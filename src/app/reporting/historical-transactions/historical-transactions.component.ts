@@ -4,7 +4,6 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Transactions } from 'src/app/model/Transactions';
 import { TransactionsService } from 'src/app/services/transactions.service';
-import { UpdateCompanyComponent } from 'src/app/updateFeature/update-company/update-company.component';
 import { UpdateTransactionComponent } from 'src/app/updateFeature/update-transaction/update-transaction.component';
 
 @Component({
@@ -64,7 +63,7 @@ export class HistoricalTransactionsComponent implements OnInit, AfterViewInit {
     .subscribe((shouldReload:boolean)=>{
 
       if(shouldReload){
-        this,this.transactionService.getAllTransactions().subscribe(
+        this.transactionService.getAllTransactions().subscribe(
           data=>{
             this.dataSource.data = data;
           }

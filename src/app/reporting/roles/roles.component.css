@@ -1,0 +1,82 @@
+section{
+    margin: auto;
+    /**width: 90%;**/
+    padding-top: 50px;
+    /**overflow-x: auto;**/
+}
+
+.roles_header{
+  display: flex;
+  align-items: center;
+  background-color: #004e92;
+  height: 40px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.text_header{
+  padding-left: 5px;
+  font-size: 0.96rem;;
+  color:#ffffff;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-weight: 500;;
+}
+
+
+.mat-header-row{
+  /**background-color: #004e92;;
+  opacity: 0.9;**/
+}
+
+.mat-header-cell{
+  /**color:#ffffff;**/
+  font-size:0.875rem;
+  width:30%;
+}
+
+.mat-cell{
+  font-size: 0.85rem;;
+}
+
+.mat-row .mat-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+  }
+  
+  .mat-row:hover .mat-cell {
+    background-color: #F8F9F9;
+    transition: ease-in-out 0.4s;
+  }
+
+.btn{
+  color:#004e92;
+  
+}
+
+
+@media screen and (max-width: 375px) {
+
+  .mat-header-cell{
+    font-size: 0.62rem;
+  }
+
+  .mat-cell{
+    font-size: 0.6rem;;
+  }
+
+}
+
+
+@media screen and (max-width: 540px) {
+
+  .mat-header-cell{
+    font-size: 0.8rem;
+  }
+
+  .mat-cell{
+    font-size: 0.7rem;;
+  }
+
+}
+  

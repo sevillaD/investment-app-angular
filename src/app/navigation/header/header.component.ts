@@ -58,7 +58,7 @@ export class HeaderComponent implements OnInit {
     const dialogRef = this.dialog.open(RoleComponent);
 
     dialogRef.afterClosed().subscribe(result=>{
-      this.router.navigate(['/add-role']);
+      this.router.navigate(['/']);
     })
   }
 
@@ -66,7 +66,7 @@ export class HeaderComponent implements OnInit {
     const dialogRef = this.dialog.open(UserComponent);
 
     dialogRef.afterClosed().subscribe(result=>{
-      this.router.navigate(['/add-user']);
+      this.router.navigate(['/']);
     })
   }
 
