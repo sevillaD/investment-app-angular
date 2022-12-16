@@ -21,17 +21,19 @@ section{
   font-weight: 500;;
 }
 
+.mat-header-row{
+  min-height: 37px;
+  border-bottom: 2px solid #D7DBDD;
+}
 
-/**.mat-header-row{
-    background-color: #004e92;;
-    opacity: 0.9;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-  }**/
+.mat-row, mat-footer-row{
+  min-height: 37px;
+}
+
   
   .mat-header-cell{
-    /**color:#ffffff;**/
     font-size:0.875rem;
+    color: #15317E;
   }
 
 .mat-row .mat-cell {
@@ -48,7 +50,14 @@ section{
 
   .btn{
     color:#004e92;
+    max-height: 26px;
   }
+
+  .btn .mat-icon{
+    height: 20px;;
+    vertical-align: top;
+  }
+  
 
 
   @media screen and (max-width: 375px) {

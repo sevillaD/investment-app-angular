@@ -24,33 +24,32 @@
 
             <mat-form-field>
                 <mat-label>Email</mat-label>
-                <input type="email" matInput formControlName="email"
-                       placeholder="Ex. jose.seville@example.com">
-                <mat-hint>Errors appear instantly!</mat-hint>
+                <input type="email" matInput formControlName="email" placeholder="Ex. jose.seville@example.com">
                 <mat-error *ngIf="createForm.hasError('email') && !createForm.hasError('required')">
                   Please enter a valid email address
                 </mat-error>
                 <mat-error *ngIf="createForm.hasError('required')">
                   Email is <strong>required</strong>
                 </mat-error>
-              </mat-form-field>
+            </mat-form-field>
 
 
-              <mat-form-field>
+            <mat-form-field>
                 <mat-label>Password</mat-label>
-                <input type="password" matInput formControlName="password"
-                       placeholder="Ex. fsdsdfsdsds">
-              </mat-form-field>
+                <input type="password" matInput formControlName="password" placeholder="Ex. mypassword">
+            </mat-form-field>
             
-            <!-- Missing roles here-->
-
-
-          
-
+            <br>
+            
+            <mat-form-field appearance="fill">
+              <mat-label>Role</mat-label>
+              <mat-select formControlName="roles" multiple>
+                <mat-option *ngFor="let element of roles" [value]="element">{{element.name}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+              
         </div>
 
-
-  
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">

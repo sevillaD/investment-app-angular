@@ -5,8 +5,6 @@ section{
     /**overflow-x: auto;**/
 }
 
-
-
 .companies_header{
   display: flex;
   align-items: center;
@@ -26,14 +24,18 @@ section{
 
 
 .mat-header-row{
-  /**background-color: #004e92;;
-  opacity: 0.9;**/
+  min-height: 37px;
+  border-bottom: 2px solid #D7DBDD;
+}
+
+.mat-row, mat-footer-row{
+  min-height: 37px;
 }
 
 .mat-header-cell{
-  /**color:#ffffff;**/
   font-size:0.875rem;
   width:30%;
+  color: #15317E;
 }
 
 .mat-cell{
@@ -53,7 +55,12 @@ section{
 
 .btn{
   color:#004e92;
-  
+  max-height: 26px;
+}
+
+.btn .mat-icon{
+  height: 20px;;
+  vertical-align: top;
 }
 
 

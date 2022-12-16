@@ -26,11 +26,12 @@ export class RoleComponent implements OnInit {
           'roleId': new FormControl(),
           'name': new FormControl(null, Validators.required),
           'description': new FormControl(null, Validators.required),
-          'createBy': new FormControl(),
+          'createdBy': new FormControl(),
           'createdDate': new FormControl(),
           'lastUpdatedBy': new FormControl(),
           'lastUpdatedDate': new FormControl()
           }
+          
         )
   }
 
@@ -40,7 +41,7 @@ export class RoleComponent implements OnInit {
       this.createForm.get('roleId')?.value,
       this.createForm.get('name')?.value,
       this.createForm.get('description')?.value,
-      this.createForm.get('createBy')?.value,
+      this.createForm.get('createdBy')?.value,
       this.createForm.get('createdDate')?.value,
       this.createForm.get('lastUpdatedBy')?.value,
       this.createForm.get('lastUpdatedDate')?.value

@@ -6,8 +6,6 @@ import { Role } from '../model/Role';
 
 const ROLES_URL = `${environment.BASE_URL}/role`
 
-const COMPANIES_URL = `${environment.BASE_URL}/investment`;
-
 @Injectable({
   providedIn: 'root'
 })
@@ -20,7 +18,7 @@ export class RoleServiceService {
   }
 
   getRoleById(roleId:number):Observable<any>{
-    return this.http.get(`${ROLES_URL}/role/${roleId}`);
+    return this.http.get(`${ROLES_URL}/get-role/${roleId}`);
   }
 
   addRole(role: Role):Observable<any>{

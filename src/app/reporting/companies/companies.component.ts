@@ -5,7 +5,6 @@ import { Company } from 'src/app/model/Company';
 import { CompaniesService } from 'src/app/services/companies.service';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateCompanyComponent } from 'src/app/updateFeature/update-company/update-company.component';
-import { Router } from '@angular/router';
 
 
 @Component({

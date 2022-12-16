@@ -30,7 +30,7 @@
 
         <ng-container matColumnDef="createdDate">
             <mat-header-cell *matHeaderCellDef>Created Date</mat-header-cell>
-            <mat-cell *matCellDef="let element ">{{element.createdDate | date}}</mat-cell>
+            <mat-cell *matCellDef="let element ">{{element.createdDate | date:'medium'}}</mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="lastUpdatedBy">

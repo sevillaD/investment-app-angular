@@ -1,5 +1,6 @@
 import { Role } from "./Role";
 
+
 export class User{
 
     constructor(public userId: number,
@@ -12,7 +13,7 @@ export class User{
                 public lastUpdatedBy:string,
                 public lastUpdatedDate:string,
                 public token: string,
-                public role: Role){
+                public roles: Role){
 
     }
     

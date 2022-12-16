@@ -1,1 +1,73 @@
-<p>update-user works!</p>
+
+
+<h2 mat-dialog-title>Update User</h2>
+
+<mat-divider></mat-divider>
+
+<form [formGroup]="updateForm" (ngSubmit)="updateUser()">
+<mat-dialog-content class="mat-typography">
+
+    <div class="form-container">
+        <mat-form-field hintLabel="Max 50 characters" appearance="fill">
+          <mat-label>First Name</mat-label>
+          <input matInput #firstName maxlength="50" placeholder="Ex. Jose" formControlName="firstName">
+         <!--  <mat-hint align="end">{{companyName.value?.length || 0}}/20</mat-hint> -->
+        </mat-form-field>
+
+        <mat-form-field hintLabel="Max 50 characters" appearance="fill">
+            <mat-label>Last firstName</mat-label>
+            <input matInput #lastName maxlength="50" placeholder="Ex. Sevilla" formControlName="lastName">
+           <!--  <mat-hint align="end">{{stockSymbol.value?.length || 0}}/20</mat-hint> -->
+        </mat-form-field>
+
+        <br>
+
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input type="email" matInput formControlName="email"
+                   placeholder="Ex. jose.seville@example.com">
+            <mat-hint>Errors appear instantly!</mat-hint>
+            <mat-error *ngIf="updateForm.hasError('email') && !updateForm.hasError('required')">
+              Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="updateForm.hasError('required')">
+              Email is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName="password" placeholder="Ex. mypassword">
+        </mat-form-field>
+        
+        <!-- Missing roles here-->
+        <br>
+        
+        <mat-form-field appearance="fill">
+          <mat-label>Role</mat-label>
+
+            <mat-select formControlName="roles" multiple>
+             <mat-option *ngFor="let element of roles" [value]="element" [ngModel] = "myModel" >
+              {{element.name}}
+             </mat-option> 
+          </mat-select>
+        </mat-form-field>
+          
+    </div>
+
+        
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button mat-dialog-close>Cancel</button>
+  <button mat-raised-button 
+          color="primary" 
+          class="btn_submit" 
+          type="submit" 
+          [disabled]="!updateForm.valid"  
+          mat-button [mat-dialog-close]="true" 
+          cdkFocusInitial
+          >Submit</button>
+</mat-dialog-actions>
+
+</form>

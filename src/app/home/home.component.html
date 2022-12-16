@@ -11,7 +11,7 @@
         <ng-container matColumnDef="transactionId">
             <mat-header-cell *matHeaderCellDef>Transaction ID</mat-header-cell>
             <mat-cell *matCellDef="let element ">
-                <button fxFlex="40px" fxLayoutAlign="center" mat-raised-button class="btn"  > <mat-icon>edit</mat-icon> </button>
+                <button fxFlex="40px" fxLayoutAlign="center" mat-raised-button class="btn" (click)="openDialog(element.transactionId)"  > <mat-icon>edit</mat-icon> </button>
                 <!--{{element.transactionId}}-->
             </mat-cell> 
         </ng-container>

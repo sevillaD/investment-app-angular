@@ -15,9 +15,7 @@ import { UpdateRoleComponent } from 'src/app/updateFeature/update-role/update-ro
 export class RolesComponent implements OnInit, AfterViewInit{
 
   role: Role[] = [];
-
   displayedColumns:string[]= ['roleId', 'name', 'description', 'createdBy', 'createdDate', 'lastUpdatedBy', 'lastUpdatedDate'];
-
   dataSource = new MatTableDataSource<Role>();
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -43,10 +41,10 @@ export class RolesComponent implements OnInit, AfterViewInit{
 
   openDialog(roleId: number):void{
 
-    const dialog = this.dialog
+    const dialogRef = this.dialog
 
     .open(UpdateRoleComponent, {
-      data: {id: roleId}
+      data:{id: roleId}
     })
 
     .afterClosed()

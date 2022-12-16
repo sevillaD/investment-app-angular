@@ -4,6 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Transactions } from '../model/Transactions';
 import { TransactionsService } from '../services/transactions.service';
+import { UpdateTransactionComponent } from '../updateFeature/update-transaction/update-transaction.component';
 
 
 @Component({
@@ -37,15 +38,32 @@ export class HomeComponent implements OnInit {
 
       }
     )
-
-
-
   }
 
 
+  openDialog(transactionId:number):void{
+
+    const dialogRef = this.dialog
+
+    .open(UpdateTransactionComponent, {
+      data: {id: transactionId}
+    })
+
+    .afterClosed()
+    .subscribe((shouldReload:boolean)=>{
+
+      if(shouldReload){
+        this.transactionService.getAllTransactions().subscribe(
+          data=>{
+            this.dataSource.data = data;
+          }
+        )
+        this.cd.detectChanges();
+      }
 
 
-  
+    })
 
- 
+  }
+
 }
